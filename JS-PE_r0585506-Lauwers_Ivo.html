@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>JS-PE_r0585506-Lauwers_Ivo</title>
+</head>
+
+<body onload="load()">
+    <Div class="container mt-5">
+        <div class="col-md-8">
+            <h1>Registreer</h1>
+            <p>Meld je aan bij Anoroc Services, wij beschermen jouw software tegen malware!</p>
+        </div>
+        <div class="d-flex">
+            <div class="col-md-8 me-5">
+                <form action="" autocomplete="on" method="post" onsubmit="return validateForm()">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="voornaam" class="d-flex">Voornaam</label>
+                            <input type="text" class="form-control" id="voornaam" name="voornaam" placeholder="Uw voornaam">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="naam" class="d-flex">Naam</label>
+                            <input type="text" class="form-control" id="naam" name="naam" placeholder="Uw naam">
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="gebruikersnaam" class="d-flex">Gebruikersnaam</label>
+                            <div class="input-group">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" id="gebruikersnaam" name="gebruikersnaam" placeholder="u911236">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="email" class="d-flex">E-mailadres</label>
+                            <input type="text" class="form-control" id="email" name="email"
+                                placeholder="mail@example.be">
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="wachtwoord" class="d-flex">Wachtwoord</label>
+                            <input type="password" class="form-control" id="wachtwoord" name="wachtwoord">
+                            <caption>Je wachtwoord moet minstens 8 tekens lang zijn.</caption>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="herhaal wachtwoord" class="d-flex">Herhaal wachtwoord</label>
+                            <input type="password" class="form-control" id="herhaal wachtwoord" name="herhaal wachtwoord">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="adres" class="d-flex">Adres</label>
+                            <input type="text" class="form-control" id="adres" name="adres"
+                                placeholder="Uw adres en huisnummer">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="land" class="d-flex">Land</label>
+                            <select class="form-select" id="land" name="land" onchange="selectVisibility(this)">
+                                <option selected disabled>Kies een land</option>
+                                <option value="belgië">België</option>
+                                <option value="nederland">Nederland</option>
+                                <option value="deutschland">Deutschland</option>
+                                <option value="france">France</option>
+                                <option value="overige">Overige</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3 col-sm-8">
+                            <label for="provincie" class="d-flex">Provincie</label>
+                            <select id="provbe" name="provbe" class="form-select">
+                                <option selected disabled>Kies een provincie</option>
+                                <option value="antwerpen">Antwerpen</option>
+                                <option value="limburg">Limburg</option>
+                                <option value="Oost-Vlaanderen">Oost-Vlaanderen</option>
+                                <option value="West-Vlaanderen">West-Vlaanderen</option>
+                                <option value="Vlaams-Brabant">Vlaams-Brabant</option>
+                                <option value="Waals-Brabant">Waals-Brabant</option>
+                                <option value="Luik">Luik</option>
+                                <option value="Henegouwen">Henegouwen</option>
+                                <option value="Namen">Namen</option>
+                                <option value="Luxemburg">Luxemburg</option>
+                            </select>
+                            <select id="provned" name="provned" class="form-select">
+                                <option selected disabled>Kies een provincie</option>
+                                <option value="Groningen">Groningen</option>
+                                <option value="Friesland (Fryslân)">Friesland (Fryslân)</option>
+                                <option value="Drenthe">Drenthe</option>
+                                <option value="Overijssel">Overijssel</option>
+                                <option value="Flevoland">Flevoland</option>
+                                <option value="Gelderland">Gelderland</option>
+                                <option value="Utrecht">Utrecht</option>
+                                <option value="Noord-Holland">Noord-Holland</option>
+                                <option value="Zuid-Holland">Zuid-Holland</option>
+                                <option value="Zeeland">Zeeland</option>
+                                <option value="Noord-Brabant">Noord-Brabant</option>
+                                <option value="Limburg">Limburg</option>
+                            </select>
+                            <select id="provde" name="provde" class="form-select">
+                                <option selected disabled>Wählen Sie eine Provinz</option>
+                                <option value="Baden-Württemberg">Baden-Württemberg</option>
+                                <option value="Bayern">Bayern</option>
+                                <option value="Berlin">Berlin</option>
+                                <option value="Brandenburg">Brandenburg</option>
+                                <option value="Bremen">Bremen</option>
+                                <option value="Bremen">Bremen</option>
+                                <option value="Hamburg">Hamburg</option>
+                                <option value="Hessen">Hessen</option>
+                                <option value="Mecklenburg-Vorpommern">Mecklenburg-Vorpommern</option>
+                                <option value="Niedersachsen">Niedersachsen</option>
+                                <option value="Nordrhein-Westfalen">Nordrhein-Westfalen</option>
+                                <option value="Rheinland-Pfalz">Rheinland-Pfalz</option>
+                                <option value="Saarland">Saarland</option>
+                                <option value="Sachsen">Sachsen</option>
+                                <option value="Sachsen-Anhalt">Sachsen-Anhalt</option>
+                                <option value="Schleswig-Holstein">Schleswig-Holstein</option>
+                                <option value="Thüringen">Thüringen</option>
+                                <option value="Bundes­republik Deutschland">Bundes­republik Deutschland</option>
+                            </select>
+                            <select id="provfr" name="provfr" class="form-select">
+                                <option selected disabled>Choisissez une province</option>
+                                <option value="Agenois">Agenois</option>
+                                <option value="Albigeois">Albigeois</option>
+                                <option value="Alsace">Alsace</option>
+                                <option value="Angoumois">Angoumois</option>
+                                <option value="Anjou">Anjou</option>
+                                <option value="Armagnac">Armagnac</option>
+                                <option value="Artois">Artois</option>
+                                <option value="Auvergne">Auvergne</option>
+                                <option value="Auxerrois">Auxerrois</option>
+                                <option value="Auxois">Auxois</option>
+                                <option value="Baillage de Gex">Baillage de Gex</option>
+                                <option value="Bassigni">Bassigni</option>
+                                <option value="Bazadois">Bazadois</option>
+                                <option value="Bearn">Bearn</option>
+                                <option value="Beauce">Beauce</option>
+                                <option value="Beaujolois">Beaujolois</option>
+                                <option value="Beauvesis">Beauvesis</option>
+                                <option value="Berry">Berry</option>
+                                <option value="Bigorre">Bigorre</option>
+                                <option value="Biscaïe Françoise">Biscaïe Françoise</option>
+                                <option value="Blaisois">Blaisois</option>
+                                <option value="Boulonnois">Boulonnois</option>
+                                <option value="Bourbonnois">Bourbonnois</option>
+                                <option value="Bourgogne">Bourgogne</option>
+                                <option value="Brie Champenoise">Brie Champenoise</option>
+                                <option value="Brie Françoise">Brie Françoise</option>
+                                <option value="Briennois">Briennois</option>
+                                <option value="Bresse">Bresse</option>
+                                <option value="Brétagne">Brétagne</option>
+                                <option value="Bugey">Bugey</option>
+                                <option value="Cambresis">Cambresis</option>
+                                <option value="Cerdagne Françoise">Cerdagne Françoise</option>
+                                <option value="Cevennes">Cevennes</option>
+                                <option value="Chalosse">Chalosse</option>
+                                <option value="Champagne">Champagne</option>
+                                <option value="Charolois">Charolois</option>
+                                <option value="Comminges">Comminges</option>
+                                <option value="Condomois">Condomois</option>
+                                <option value="Conserans">Conserans</option>
+                                <option value="Dauphiné">Dauphiné</option>
+                                <option value="Donezan">Donezan</option>
+                                <option value="Dunois">Dunois</option>
+                                <option value="Estarac">Estarac</option>
+                                <option value="Evéchez (les trois)">Evéchez (les trois)</option>
+                                <option value="Flandres Françoise">Flandres Françoise</option>
+                                <option value="Flandre Flamingante">Flandre Flamingante</option>
+                                <option value="Foix">Foix</option>
+                                <option value="Forez">Forez</option>
+                                <option value="Franche-Comté">Franche-Comté</option>
+                                <option value="Gabardan">Gabardan</option>
+                                <option value="Gascogne">Gascogne</option>
+                                <option value="Gâtinois">Gâtinois</option>
+                                <option value="Gevaudan">Gevaudan</option>
+                                <option value="Guïenne">Guïenne</option>
+                                <option value="Haynaut François">Haynaut François</option>
+                                <option value="Hurepoix">Hurepoix</option>
+                                <option value="Isle de France">Isle de France</option>
+                                <option value="Les Landes">Les Landes</option>
+                                <option value="Languedoc">Languedoc</option>
+                                <option value="Lâonnois">Lâonnois</option>
+                                <option value="Lauraguay">Lauraguay</option>
+                                <option value="Limosin">Limosin</option>
+                                <option value="Lomagne">Lomagne</option>
+                                <option value="Lorraine">Lorraine</option>
+                                <option value="Luxembourg François">Luxembourg François</option>
+                                <option value="Lyonnois">Lyonnois</option>
+                                <option value="Le Maine">Le Maine</option>
+                                <option value="Mantois">Mantois</option>
+                                <option value="Marche">Marche</option>
+                                <option value="Medoc">Medoc</option>
+                                <option value="Namur François">Namur François</option>
+                                <option value="Basse Navarre">Basse Navarre</option>
+                                <option value="Neboussan">Neboussan</option>
+                                <option value="Nivernois">Nivernois</option>
+                                <option value="Normandie">Normandie</option>
+                                <option value="Orleanois">Orleanois</option>
+                                <option value="Païs d'Aunis">Païs d'Aunis</option>
+                                <option value="Païs de Bray">Païs de Bray</option>
+                                <option value="Païs de Caux">Païs de Caux</option>
+                                <option value="Païs de Grave">Païs de Grave</option>
+                                <option value="Païs de Marsan">Païs de Marsan</option>
+                                <option value="Païs d'entre Sambre et Meuse">Païs d'entre Sambre et Meuse</option>
+                                <option value="Païs d'Ostrevent">Païs d'Ostrevent</option>
+                                <option value="Païs Messin">Païs Messin</option>
+                                <option value="Païs Réconquis">Païs Réconquis</option>
+                                <option value="Perche">Perche</option>
+                                <option value="Perigord">Perigord</option>
+                                <option value="Perrois">Perrois</option>
+                                <option value="Picardie">Picardie</option>
+                                <option value="Poitou">Poitou</option>
+                                <option value="Ponthieu">Ponthieu</option>
+                                <option value="Principauté de Dombes">Principauté de Dombes</option>
+                                <option value="Principauté de Sedan">Principauté de Sedan</option>
+                                <option value="Principauté d'Orange">Principauté d'Orange</option>
+                                <option value="Provence">Provence</option>
+                                <option value="Les Quatre Vallées">Les Quatre Vallées</option>
+                                <option value="Quercy">Quercy</option>
+                                <option value="Remois">Remois</option>
+                                <option value="Rethelois">Rethelois</option>
+                                <option value="Rouergue">Rouergue</option>
+                                <option value="Roussillon">Roussillon</option>
+                                <option value="Saare">Saare</option>
+                                <option value="Saintonge">Saintonge</option>
+                                <option value="Sauterre">Sauterre</option>
+                                <option value="Saumurrois">Saumurrois</option>
+                                <option value="Senonois">Senonois</option>
+                                <option value="Soissonnois">Soissonnois</option>
+                                <option value="Sundgovv">Sundgovv</option>
+                                <option value="Terre de Labour">Terre de Labour</option>
+                                <option value="Tierache">Tierache</option>
+                                <option value="Toulois">Toulois</option>
+                                <option value="Tourraine">Tourraine</option>
+                                <option value="Valage">Valage</option>
+                                <option value="Val d'Andorre">Val d'Andorre</option>
+                                <option value="Valée de Soule">Valée de Soule</option>
+                                <option value="Valois">Valois</option>
+                                <option value="Valromey">Valromey</option>
+                                <option value="Velay">Velay</option>
+                                <option value="Vendomois">Vendomois</option>
+                                <option value="Verdunois">Verdunois</option>
+                                <option value="Vermandois">Vermandois</option>
+                                <option value="Vexin-François">Vexin-François</option>
+                                <option value="Vexin-Normand">Vexin-Normand</option>
+                                <option value="Vimeux">Vimeux</option>
+                                <option value="Vivarais">Vivarais</option>
+                            </select>
+                            <select name="provo" id="provo" class="form-select">
+                                <option value="overige">Overige</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 mb-3 col-sm-4">
+                            <label for="postcode" class="d-flex">Postcode</label>
+                            <input type="number" class="form-control" id="postcode" name="postcode">
+                        </div>
+                        <hr>
+                        <div class="col-md-7 mb-3">
+                            <h3>Hou me op de hoogte</h3>
+                            <div class="form-check">
+                                <input type="checkbox" name="nbrief" id="nbrief" class="form-check-input">
+                                <label for="nbrief" class="form-check-label">Inschrijven voor onze nieuwsbrief</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="voorwaarden" id="voorwaarden" class="form-check-input">
+                                <label for="voorwaarden" class="form-check-label">Ik ga akkoord met de algemene
+                                    voorwaarden.</label></div>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <H3>Betaling</H3>
+                            <div class="form-check">
+                                <input type="radio" name="rbBetaling" id="rbBanking" value="Banking app"
+                                    class="form-check-input" checked>
+                                <label for="rbBanking" class="form-check-label">Banking app</label></div>
+                            <div class="form-check">
+                                <input type="radio" name="rbBetaling" id="rbOverschrijving" value="Overschrijving"
+                                    class="form-check-input">
+                                <label for="rbOverschrijving" class="form-check-label">Overschrijving</label></div>
+                            <div class="form-check">
+                                <input type="radio" name="rbBetaling" id="rbVisa" value="Visa card"
+                                    class="form-check-input">
+                                <label for="rbVisa" class="form-check-label">Visa card</label></div>
+                            <div class="form-check">
+                                <input type="radio" name="rbBetaling" id="rbPayPal" value="PayPal"
+                                    class="form-check-input">
+                                <label for="rbPayPal" class="form-check-label">PayPal</label></div>
+                        </div>
+                        <hr>
+                        <div>
+                            <button type="submit" class="form-control btn-primary p-2">Wave your magic wand</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div class="alert-danger p-2 mb-3 rounded" id="error">
+                    <h4>Yikes, errors..</h4>
+                    <p id="foutmelding"></p>
+                </div>
+                <div class="alert-success p-2 mb-3 rounded" id="success">
+                    <h4>Goed gedaan!</h4>
+                    <p>Aww yeah, je werd geregistreerd.</p>
+                </div>
+                <div class="alert-info p-2 mb-3 rounded" id="bwijze">
+                    <h4>Betalingswijze</h4>
+                    <p id="betalingswijze"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const provbe = document.getElementById('provbe');     //declaratie van variabeles.
+        const provned = document.getElementById('provned');
+        const provde = document.getElementById('provde');
+        const provfr = document.getElementById('provfr');
+        const provo = document.getElementById('provo');
+        const errorAlert = document.getElementById('error');
+        const successAlert = document.getElementById('success');
+        const bwijzeAlert = document.getElementById('bwijze');
+        const foutmelding = document.getElementById('foutmelding');
+        const wachtwoord1 = document.getElementById('wachtwoord');
+        const wachtwoord2 = document.getElementById('herhaal wachtwoord');
+        var land = document.getElementById('land');
+        const radioButtons = document.querySelectorAll('input[name="rbBetaling"]');
+        const fieldArray = ['voornaam','naam','gebruikersnaam', 'email' ,'wachtwoord', 'herhaal wachtwoord','adres' ,'land', 'postcode'];
+        var errorArray = [];
+
+        function hideProvinces(){       //functie die ervoor zorgt dat er geen provincie select zichtbaar is en de layout van de provincie select in orde brengt.
+            provbe.style.display = 'none';
+            provned.style.display = 'none';
+            provde.style.display = 'none';
+            provfr.style.display = 'none';
+            provo.style.display = 'none';
+        }
+
+        function hideAlerts(){          //functie die de alert boxen onzichtbaar maakt.
+            errorAlert.style.display = 'none';
+            successAlert.style.display = 'none';
+            bwijzeAlert.style.display = 'none';
+        }
+
+        function showBel(){             //functie die de select met belgische provincies laat zien en de provincie select enabled.
+            provbe.style.display = 'block';
+            provbe.disabled = false;
+        }
+
+        function showNed(){             //functie die de select met nederlandse provincies laat zien en de provincie select enabled.
+            provned.style.display = 'block';
+            provned.disabled = false;
+        }
+
+        function showDe(){             //functie die de select met duitse provincies laat zien en de provincie select enabled.
+            provde.style.display = 'block';
+            provde.disabled = false;
+        }
+
+        function showFr(){             //functie die de select met franse provincies laat zien en de provincie select enabled.
+            provfr.style.display = 'block';
+            provfr.disabled = false;
+        }
+
+        function showO(){             //functie die de select met overige provincies laat zien en de provincie select enabled.
+            provo.style.display = 'block';
+            provo.disabled = false;
+        }
+
+        function resetHiddenValues(){   //functie die de waardes van de provincies resetten bij andere landselectie en provincie selects disabled zodat deze niet worden verstuurd bij form submit.
+            provbe.selectedIndex = 0;
+            provbe.disabled = true;
+            provned.selectedIndex = 0;
+            provned.disabled = true;
+            provde.selectedIndex = 0;
+            provde.disabled = true;
+            provfr.selectedIndex = 0;
+            provfr.disabled = true;
+            provo.selectedIndex = 0;
+            provo.disabled = true;
+        }
+
+        function selectVisibility(select){          //functie waarbij ik met een switch werk om de juiste provincie select aan de juiste land selectie te koppelen. Ook worden de waardes van de hidden selects gereset. 
+            
+            hideProvinces();
+            resetHiddenValues();
+            switch(land.value) {
+            case 'belgië':
+            showBel();
+            break;
+            case 'nederland':
+            showNed();
+            break;
+            case 'deutschland':
+            showDe();
+            break;
+            case 'france':
+            showFr();
+            break
+            case 'overige':
+            showO();
+            break;            
+            }
+        }
+
+        function load(){                //functie die wordt opgeroepen bij het laden van de pagina, zorgt er voor dat er maar 1 provincie select zichtbaar is en dat de alerts niet zichtbaar zijn.
+        hideProvinces();
+        showBel();
+        hideAlerts();
+        }
+
+        function validateLocation(){                // functie om te checken of het land en de daarbij horende provincie geselecteerd zijn.
+            const provMsg = 'Gelieve een provincie te selecteren.'
+            switch(land.value) {
+            case 'belgië':
+            if(provbe.selectedIndex==0){
+                errorArray.push(provMsg)
+            };
+            break;
+            case 'nederland':
+            if(provned.selectedIndex==0){
+                errorArray.push(provMsg)
+            };
+            break;
+            case 'deutschland':
+            if(provde.selectedIndex==0){
+                errorArray.push(provMsg)
+            };
+            break;
+            case 'france':
+            if(provfr.selectedIndex==0){
+                errorArray.push(provMsg)
+            };
+            break
+            case 'overige':
+            if(provo.selectedIndex==0){
+                errorArray.push(provMsg)
+            };
+            break; 
+            default :
+            errorArray.push('Gelieve een land te selecteren.');
+            if(provbe.selectedIndex==0){
+                errorArray.push(provMsg)
+            };         
+            break;
+            }
+        }
+
+        function checkPC(postcode){           // functie om te checken of de postcode tussen 1000 en 9999 liggen, dit kan ook via HTML met de min en max atributen.
+            if(postcode > 9999 || postcode < 1000){
+                errorArray.push('De waarde van postcode moet tussen 1000 en 9999 liggen.')
+            }
+        }
+
+        function validatePassword(){            // functie die kijkt of het wachtwoord lang genoeg is en checkt of de wachtwoorden overeen komen.
+            if(wachtwoord1.value.length<8){
+                errorArray.push('Uw wachtwoord moet minstens 8 karakters hebben.')
+            }
+            else if(wachtwoord1.value != wachtwoord2.value){
+                errorArray.push('Uw wachtwoorden komen niet overeen.')
+            }
+        }
+
+        function validateTermsAndConditions(){      // functie die checkt of de Algemene voorwaarden gecheckt is.
+            if(document.getElementById('voorwaarden').checked == false){
+                errorArray.push('Je moet de algemene voorwaarden accepteren.')
+            }
+        }
+
+        function validatePayment(veld){         // functie die checkt welke radiobutton er geselecteerd is en de output in de betalingswijze paragraaf zet.
+            for( const radioButton of veld){
+                if (radioButton.checked){
+                    document.getElementById('betalingswijze').innerHTML = 'Je betalingswijze is ' + radioButton.value;
+                    break;
+                }
+            }
+        }
+
+        function validateEmail(mailadres){      //https://www.w3resource.com/javascript/form/email-validation.php
+            const emailMsg = 'E-mailadres is niet correct.'
+            const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            const nameformat = /^[\w(?!-)]+([.-]?\w+)/
+            const domainformat = /\w+([.-]?\w+)(.\w{2,3})+$/;
+            const mailname = mailadres.substring(0, mailadres.lastIndexOf("@"));
+            const domainname = mailadres.substring(mailadres.lastIndexOf("@")+1);
+            if (mailname.match(nameformat)==false) {
+                errorArray.push(emailMsg);
+                return false;
+            } 
+            if(domainname.match(domainformat)==false){
+                errorArray.push(emailMsg);
+                return false;
+            }
+            if(domainname.length == 0){
+                errorArray.push(emailMsg);
+                return false;
+            }
+            if(mailname.length == 0){
+                errorArray.push(emailMsg);
+                return false;
+            }
+        }
+        
+        function checkEmptyField(veld, melding){        // functie om te checken of veld leeg is en oproepen van extra validaties.
+            if(document.getElementById(veld).value == ""){
+                errorArray.push(melding);
+            }
+            else{
+                if(veld =='email'){
+                    validateEmail(document.getElementById(veld).value);
+                }
+                if(veld == 'herhaal wachtwoord'){
+                    validatePassword();
+                }
+                if(veld == 'land'){
+                    validateLocation();
+                }
+                if(veld == 'postcode'){
+                    checkPC(document.getElementById(veld).value);
+                }
+            }
+        }
+
+        function validateForm(){                // hoofdfunctie die alle andere functies oproept, wordt opgeroepen bij submit button click.
+            fieldArray.forEach(element => {
+                checkEmptyField(element,('Het veld '+element+' is vereist.'))
+                }
+            )
+            validateTermsAndConditions();
+            validatePayment(radioButtons);
+
+            if(errorArray.length > 0){
+            errorAlert.style.display = 'block';
+            successAlert.style.display ='none';
+            bwijzeAlert.style.display ='none';
+            foutmelding.innerHTML = errorArray.join("<br>");
+            errorArray = [];
+            }
+            else{
+                errorAlert.style.display = 'none';
+                successAlert.style.display ='block';
+                bwijzeAlert.style.display ='block';
+            }
+            return false;
+        }
+        
+    </script>
+</body>
+
+</html>
